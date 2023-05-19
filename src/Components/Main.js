@@ -5,11 +5,14 @@ import {MdModeEditOutline} from 'react-icons/md'
 import {RiErrorWarningLine} from 'react-icons/ri'
 import posts from './Posts';
 import Card from './Card';
+import {AiFillLike} from 'react-icons/ai'
+import Group from './Group';
+import groups from './GroupsData';
 
-const Main = () => {
+const Main = ({isLoggedIn, setIsLoggedIn}) => {
   return (
     <main>
-        <Tab/>
+        <Tab isLoggedIn={isLoggedIn}/>
         <div className="content-main container">
             <div className="row">
                 <div className="cards-container col-9">
@@ -27,13 +30,31 @@ const Main = () => {
                     <div className="location-warning">
                         <span className='row'>
                             <div className="col-1">
-                                <RiErrorWarningLine style={{fontSize: "16px"}}/>
+                                <span>
+                                    <RiErrorWarningLine style={{fontSize: "16px"}}/>
+                                </span>
 
                             </div>
                             <div className="col-9">
-                              Your location will help us serve better and extend a personalised experience. 
+                                <span>
+                                    Your location will help us serve better and extend a personalised experience. 
+                                </span>
                             </div>
                         </span>
+                        {
+                            isLoggedIn ?
+                            <div className="recommended-groups">
+                                <span>
+                                    <AiFillLike/> RECOMMENDED GROUPS
+                                </span>
+                                {groups.map((group)=>{
+                                    return <Group {...group}/>
+                                })}
+                            </div>
+                            :
+                            ""
+
+                        }
                     </div>
                 </div>
             </div>

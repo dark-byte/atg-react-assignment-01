@@ -1,8 +1,9 @@
 import React from 'react';
 import {IoMdArrowDropdown} from 'react-icons/io'
 import {AiOutlineUsergroupAdd} from 'react-icons/ai'
+import {MdExitToApp} from 'react-icons/md'
 
-const Tab = () => {
+const Tab = ({isLoggedIn, setIsLoggedIn}) => {
   return (
     <div className="tabs-container">
         <div className='tabs'>
@@ -18,10 +19,20 @@ const Tab = () => {
                     <IoMdArrowDropdown/>
                 </span>
             </button>
-            <button className='join-group btn btn-primary'>
-                <span>
-                    <AiOutlineUsergroupAdd/>
-                </span> Join Group</button>
+            {
+                isLoggedIn ?
+                <button className='leave-group btn btn-primary'>
+                    <span>
+                        <MdExitToApp/>
+                    </span> Leave Group
+                </button>
+                :
+                <button className='join-group btn btn-primary'>
+                    <span>
+                        <AiOutlineUsergroupAdd/>
+                    </span> Join Group
+                </button>
+            }
         </div>
     </div>
   );
