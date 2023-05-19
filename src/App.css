@@ -3,6 +3,48 @@ body{
   font-weight: 500;
 }
 
+.row{
+  padding: 0;
+}
+
+.hero-container{
+  display: flex;
+  max-width: 100vw;
+  height: 440px;
+  background-size: cover;
+  color: #fff;
+}
+
+.hero-container::before{
+  content: "";
+  position: absolute;
+  width: 100vw;
+  max-width: 100vw;
+  height: 440px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.title {
+  display: flex;
+  z-index: 5;
+  flex-direction: column;
+  justify-content: end;
+  padding-left: 150px;
+  padding-bottom: 70px;
+}
+
+.title h3{
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.title p{
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+}
+
 header{
   display: flex;
   justify-content: space-between;
@@ -17,6 +59,7 @@ header img{
 
 header input[type=text]{
   z-index: 1;
+  font-size: 14px;
   background: #F2F2F2;
   width: 320px;
   height: 42px;
@@ -30,10 +73,121 @@ header input[type=text]{
   transform: translateX(35px);
 }
 
+main{
+  padding:20px 150px;
+}
+
+.tabs-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.tab-btn{
+  font-size: 16px;
+  color: #8A8A8A;
+  font-weight: 400;
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.active{
+  color: #000;
+  border-bottom: solid #000 1px;
+}
+
+.btn-container > *{
+  width: 133px;
+  height: 36px;
+  margin-left: 16px;
+  font-size: 15px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;;
+}
+
+.write-post{
+  background: #EDEEF0;
+}
+
+.join-group{
+  color: #fff;
+  background: #2F6CE5;
+}
+
+.content-main{
+  padding-top: 30px;
+}
+
+.location{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+
+.location-warning{
+  max-width: 245px;
+}
+
+.location-input{
+  max-width: 245px;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.4px solid #B8B8B8;
+  padding-bottom: 0.5rem;
+}
+
+.location-input input{
+  border: none;
+}
+
+.location span{
+  font-size: 12px;
+  font-weight: 400;
+  color: #000000;
+  opacity: 0.5;
+}
+
+
 
 @media screen and (max-width: 800px) {
   header{
     display: none;
     visibility: hidden;
+  }
+
+  .title{
+    padding-left: 20px;
+    padding-bottom: 50px;
+  }
+
+  .title h3{
+    font-size: 22px;
+  }
+
+  .title p{
+    font-size: 16px;
+  }
+
+  .write-post{
+    display: none;
+    visibility: hidden;
+  }
+
+  .join-group{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: solid #fff 2px;
+    background: none;
+  }
+  main{
+    padding: 10px 20px;
   }
 }
