@@ -3,6 +3,8 @@ import Tab from './Tab';
 import {GoLocation} from 'react-icons/go'
 import {MdModeEditOutline} from 'react-icons/md'
 import {RiErrorWarningLine} from 'react-icons/ri'
+import posts from './Posts';
+import Card from './Card';
 
 const Main = () => {
   return (
@@ -11,7 +13,9 @@ const Main = () => {
         <div className="content-main container">
             <div className="row">
                 <div className="cards-container col-9">
-    .
+                    {posts.map((post)=>{
+                        return(<Card {...post}/>)
+                    })}
                 </div>
                 <div className="location col-3">
                     <div className="input-group mb-3 location-input">
