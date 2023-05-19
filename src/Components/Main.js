@@ -13,6 +13,12 @@ const Main = ({isLoggedIn, setIsLoggedIn}) => {
   return (
     <main>
         <Tab isLoggedIn={isLoggedIn}/>
+        <div className="post-filter">
+            <h3>Posts (368)</h3>
+            <div className="dropdown">
+                <button className='dropdown-toggle btn btn-secondary'>Filter: All</button>
+            </div>
+        </div>
         <div className="content-main container">
             <div className="row">
                 <div className="cards-container col-9">
